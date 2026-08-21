@@ -156,20 +156,20 @@
         font: 700 clamp(5px, 1.35vw, 11px) monospace;
       }
       .services {
-        left: 2%;
-        top: 64.3%;
-        width: 35%;
-        height: 5%;
+        left: 4.2%;
+        top: 64.5%;
+        width: 30%;
+        height: 4.4%;
         padding: 0;
         display: grid;
         place-items: center;
         text-align: center;
       }
       .contact {
-        right: 4.5%;
-        top: 73.2%;
-        width: 22%;
-        height: 4.2%;
+        right: 7%;
+        top: 73.4%;
+        width: 17.5%;
+        height: 3.4%;
         padding: 0;
         display: grid;
         place-items: center;
@@ -177,11 +177,45 @@
       }
       .services b,
       .contact b {
-        font: 900 clamp(12px, 4vw, 31px) monospace;
+        font: 900 clamp(10px, 3.1vw, 25px) monospace;
       }
       .contact b {
-        font-size: clamp(7px, 2vw, 17px);
+        font-size: clamp(6px, 1.65vw, 14px);
         letter-spacing: -0.04em;
+      }
+      .click-mark {
+        position: absolute;
+        right: -5px;
+        bottom: -6px;
+        width: clamp(16px, 4.8vw, 34px);
+        height: clamp(16px, 4.8vw, 34px);
+        display: grid;
+        place-items: center;
+        border: 1.5px solid var(--i);
+        border-radius: 50%;
+        background: var(--c);
+        box-shadow: 2px 2px 0 #0003;
+        font: 900 clamp(9px, 2.5vw, 18px) Arial;
+        animation: discover 0.65s ease-in-out 1.1s 3 alternate;
+      }
+      .proc .click-mark {
+        right: 1px;
+        bottom: -20px;
+      }
+      .works .click-mark {
+        right: -4px;
+        bottom: 1px;
+      }
+      .services .click-mark,
+      .contact .click-mark {
+        right: -8px;
+        bottom: -2px;
+      }
+      .scene:has(.hp:hover) .proc .click-mark,
+      .scene:has(.hw:hover) .works .click-mark,
+      .scene:has(.hs:hover) .services .click-mark,
+      .scene:has(.hc:hover) .contact .click-mark {
+        transform: translate(2px, -2px) scale(1.12);
       }
       .hot {
         position: absolute;
@@ -459,6 +493,11 @@
           opacity: 0;
         }
       }
+      @keyframes discover {
+        to {
+          transform: translate(2px, -3px) rotate(-10deg) scale(1.12);
+        }
+      }
       @keyframes rise {
         from {
           transform: translateY(25px);
@@ -508,13 +547,19 @@
           <b>VEATUM</b><span>ЦИФРОВЫЕ РЕШЕНИЯ<br />ДЛЯ БИЗНЕСА</span>
         </div>
         <div class="label proc">
-          <b>ПРОЦЕСС</b><small>ИДЕЯ → КОД → ЗАПУСК</small>
+          <b>ПРОЦЕСС</b><small>ИДЕЯ → КОД → ЗАПУСК</small
+          ><i class="click-mark">+</i>
         </div>
         <div class="label works">
           <div><b>РАБОТЫ</b><small>ОТКРЫТЬ ПОРТФОЛИО</small></div>
+          <i class="click-mark">+</i>
         </div>
-        <div class="label services"><b>УСЛУГИ</b></div>
-        <div class="label contact"><b>КОНТАКТЫ</b></div>
+        <div class="label services">
+          <b>УСЛУГИ</b><i class="click-mark">+</i>
+        </div>
+        <div class="label contact">
+          <b>КОНТАКТЫ</b><i class="click-mark">+</i>
+        </div>
         <div class="steam"><i></i><i></i></div>
         <button
           class="hot light"
